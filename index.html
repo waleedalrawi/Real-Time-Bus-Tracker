@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <!-- This is a tracker for SFMTA buses using 511 openAIs (https://511.org/open-data/transit)  -->
+  <head>
+    <meta charset="utf-8" />
+    <title>SF Bus Tracker</title>
+    <link rel="icon" type="image/x-icon" href="bus.png" />
+    <!-- prettier-ignore -->
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <!-- mapbox APIs -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <div class="map-overlay top">
+      <button class="button stop" onclick="stop()">Stop Updating</button>
+      <button class="button restart" onclick="restart()">Start Updating</button>
+      <!-- <div class="div selector" id="line">Bus Line: F</div> -->
+      <label for="routes">Route: </label>
+      <select name="routes" id="routes" onchange="restart()">
+        <option value="" selected="true" disabled>--Choose a Route--</option>
+      </select>
+    </div>
+
+    <script src="mapanimation.js"></script>
+  </body>
+</html>
